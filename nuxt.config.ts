@@ -8,5 +8,8 @@ export default defineNuxtConfig({
         implementation: require('sass')
       }
     }
-  }
+  },
+  css: [
+    '@/assets/css/index.scss'
+  ]
 })
