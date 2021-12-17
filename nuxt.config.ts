@@ -5,15 +5,15 @@ export default defineNuxtConfig({
   build: {
     loaders: {
       scss: {
-        implementation: require('sass')
-      }
-    }
+        implementation: require('sass'),
+      },
+    },
   },
   buildModules: [
     '@vueuse/nuxt',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
   ],
   css: [
-    '@/assets/css/index.scss'
-  ]
+    '@/assets/css/index.scss',
+  ],
 })
