@@ -9,6 +9,10 @@ export default defineNuxtConfig({
       }
     }
   },
+  buildModules: [
+    '@vueuse/nuxt',
+    '@pinia/nuxt'
+  ],
   css: [
     '@/assets/css/index.scss'
   ]
