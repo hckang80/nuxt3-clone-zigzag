@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const foo = ref({})
-
-const data = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-
-foo.value = await data.json()
+const { data } = useFetch('https://jsonplaceholder.typicode.com/todos/1')
 </script>
 
 <template>
   <div>
-    {{ foo }}
+    {{ data }}
   </div>
 </template>
