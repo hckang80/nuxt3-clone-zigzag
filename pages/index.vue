@@ -30,12 +30,36 @@ const [
 
     <ul class="main-products">
       <li
-        v-for="product in products"
-        :key="product.id"
+        v-for="{
+          id,
+          image,
+          title
+        } in products"
+        :key="id"
         class="main-products__item"
       >
-        {{ product }}
+        <img
+          :src="image"
+          :alt="title"
+          loading="lazy"
+        >
       </li>
     </ul>
   </article>
 </template>
+
+<style lang="scss" scoped>
+.main-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: #000;
+  &__item {
+    flex-basis: calc((100% / 3) - 1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+}
+</style>
