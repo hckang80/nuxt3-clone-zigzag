@@ -14,8 +14,10 @@ const [
       <h1 hidden>
         내 스타일 선택하기
       </h1>
-      <strong>좋아하는 스타일을 알려주세요.</strong>
-      매일 취향에 맞는 상품을 찾아올게요!
+      <p>
+        <strong block>좋아하는 스타일을<br> 알려주세요.</strong>
+        매일 취향에 맞는 상품을 찾아올게요!
+      </p>
     </header>
 
     <ul class="main-categories">
@@ -49,6 +51,17 @@ const [
 </template>
 
 <style lang="scss" scoped>
+.select-my-style__header {
+  margin: 0 0 2em;
+  p {
+    > strong {
+      margin: 0 0 0.5em;
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+  }
+}
+
 .main-products {
   display: flex;
   flex-wrap: wrap;
