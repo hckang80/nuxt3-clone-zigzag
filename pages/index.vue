@@ -62,6 +62,17 @@ const [
   }
 }
 
+.main-categories {
+  overflow: auto;
+  display: flex;
+  gap: 0 1em;
+  font-weight: bold;
+  text-transform: capitalize;
+  &__item {
+    white-space: nowrap;
+  }
+}
+
 .main-products {
   display: flex;
   flex-wrap: wrap;
