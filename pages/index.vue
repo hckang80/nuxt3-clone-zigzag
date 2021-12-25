@@ -50,8 +50,9 @@ const checkedProducts = ref<number[]>([])
             type="checkbox"
             :value="id"
           >
-          <span class="backdrop" />
-          <i class="icon-heart" />
+          <span class="backdrop">
+            <i class="icon-heart" />
+          </span>
           <img
             :src="image"
             :alt="title"
@@ -99,10 +100,19 @@ const checkedProducts = ref<number[]>([])
     padding: 0 0 40%;
     background: #fff;
   }
+  .is-checked {
+    .backdrop {
+      background: rgba(0, 0, 0, .5)
+    }
+    [class^=icon] {
+      top: 0;
+    }
+  }
   label {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -112,14 +122,32 @@ const checkedProducts = ref<number[]>([])
     z-index: 4;
     opacity: 0;
     &:checked + .backdrop {
-      background: rgba(0, 0, 0, .5)
+      background: rgba(0, 0, 0, .5);
+      [class^=icon] {
+        top: 0;
+        opacity: 1;
+      }
     }
   }
   .backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     z-index: 2;
     width: 100%;
     height: 100%;
+  }
+  [class^=icon] {
+    transition: top .3s ease-in-out;
+    opacity: 0;
+    top: 70%;
+    font-size: 1.8rem;
+    background-color: #fff;
+    &::before,
+    &::after {
+      background-color: #fff;
+    }
   }
   img {
     padding: 0.5em;
