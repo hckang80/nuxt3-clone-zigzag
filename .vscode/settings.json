@@ -4,4 +4,7 @@
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": false,
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
 }

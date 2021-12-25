@@ -16,4 +16,7 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/index.scss',
   ],
+  typescript: {
+    strict: true,
+  },
 })
