@@ -51,6 +51,7 @@ const checkedProducts = ref<number[]>([])
             :value="id"
           >
           <span class="backdrop" />
+          <i class="icon-heart" />
           <img
             :src="image"
             :alt="title"
