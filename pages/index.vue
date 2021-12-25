@@ -50,6 +50,7 @@ const checkedProducts = ref<number[]>([])
             type="checkbox"
             :value="id"
           >
+          <span class="backdrop" />
           <img
             :src="image"
             :alt="title"
@@ -76,6 +77,7 @@ const checkedProducts = ref<number[]>([])
 .main-categories {
   overflow: auto;
   display: flex;
+  margin: 0 0 1em;
   gap: 0 1em;
   font-weight: bold;
   text-transform: capitalize;
@@ -86,15 +88,42 @@ const checkedProducts = ref<number[]>([])
 
 .main-products {
   display: flex;
+  overflow: hidden;
   flex-wrap: wrap;
   gap: 1px;
+  border-radius: 5px;
   background: #000;
   &__item {
+    position: relative;
     flex-basis: calc((100% / 3) - 1px);
+    padding: 0 0 40%;
+    background: #fff;
+  }
+  label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  input {
+    position: absolute;
+    z-index: 4;
+    opacity: 0;
+    &:checked + .backdrop {
+      background: rgba(0, 0, 0, .5)
+    }
+  }
+  .backdrop {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    padding: 0.5em;
+    max-height: 100%;
   }
 }
 </style>
