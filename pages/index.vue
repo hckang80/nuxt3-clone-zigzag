@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const [
   { data: categories },
   { data: products },
@@ -6,6 +8,8 @@ const [
   useFetch('https://fakestoreapi.com/products/categories'),
   useFetch('https://fakestoreapi.com/products'),
 ])
+
+const checkedProducts = ref<number[]>([])
 </script>
 
 <template>
@@ -40,11 +44,18 @@ const [
         :key="id"
         class="main-products__item"
       >
-        <img
-          :src="image"
-          :alt="title"
-          loading="lazy"
-        >
+        <label>
+          <input
+            v-model="checkedProducts"
+            type="checkbox"
+            :value="id"
+          >
+          <img
+            :src="image"
+            :alt="title"
+            loading="lazy"
+          >
+        </label>
       </li>
     </ul>
   </article>
