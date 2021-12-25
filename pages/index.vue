@@ -77,7 +77,7 @@ const checkedProducts = ref<number[]>([])
 .main-categories {
   overflow: auto;
   display: flex;
-  margin: 0 0 1em;
+  margin: 0 -1em 1em 0;
   gap: 0 1em;
   font-weight: bold;
   text-transform: capitalize;
@@ -92,7 +92,6 @@ const checkedProducts = ref<number[]>([])
   flex-wrap: wrap;
   gap: 1px;
   border-radius: 5px;
-  background: #000;
   &__item {
     position: relative;
     flex-basis: calc((100% / 3) - 1px);
