@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Categories } from '@/types'
 
 const [
   { data: categories },
@@ -8,6 +9,8 @@ const [
   useFetch('https://fakestoreapi.com/products/categories'),
   useFetch('https://fakestoreapi.com/products'),
 ])
+
+const selectedCategory = ref<Categories | ''>('')
 
 const checkedProducts = ref<number[]>([])
 </script>
@@ -30,7 +33,9 @@ const checkedProducts = ref<number[]>([])
         :key="category"
         class="main-categories__item"
       >
-        {{ category }}
+        <button @click="selectedCategory = category">
+          {{ category }}
+        </button>
       </li>
     </ul>
 
