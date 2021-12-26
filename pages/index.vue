@@ -85,10 +85,12 @@ const checkedProducts = ref<number[]>([])
 .select-my-style__header {
   margin: 0 0 2em;
   p {
+    color: var(--color-gray);
     > strong {
       margin: 0 0 0.5em;
       font-size: 1.8rem;
       line-height: 1.2;
+      color: var(--color-white);
     }
   }
 }
@@ -102,6 +104,13 @@ const checkedProducts = ref<number[]>([])
   text-transform: capitalize;
   &__item {
     white-space: nowrap;
+    color: var(--color-gray);
+    &.is-active {
+      color: inherit;
+    }
+    button {
+      text-transform: capitalize;
+    }
   }
 }
 
@@ -115,7 +124,7 @@ const checkedProducts = ref<number[]>([])
     position: relative;
     flex-basis: calc((100% / 3) - 1px);
     padding: 0 0 40%;
-    background: #fff;
+    background: var(--color-white);
   }
   .is-checked {
     .backdrop {
@@ -160,10 +169,10 @@ const checkedProducts = ref<number[]>([])
     opacity: 0;
     top: 70%;
     font-size: 1.8rem;
-    background-color: #fff;
+    background-color: var(--color-white);
     &::before,
     &::after {
-      background-color: #fff;
+      background-color: var(--color-white);
     }
   }
   img {
