@@ -10,11 +10,13 @@ const [
   useFetch('https://fakestoreapi.com/products'),
 ])
 
-const allCategories: Categories[] = ['all', ...categories.value]
+const ALL = 'all'
 
-const selectedCategory = ref<Categories>('all')
+const allCategories: Categories[] = [ALL, ...categories.value]
 
-const filteredProducts = computed(() => selectedCategory.value !== 'all'
+const selectedCategory = ref<Categories>(ALL)
+
+const filteredProducts = computed(() => selectedCategory.value !== ALL
   ? products.value.filter(({ category }) => category === selectedCategory.value)
   : products.value,
 )
