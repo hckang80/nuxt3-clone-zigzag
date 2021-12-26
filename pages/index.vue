@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Categories } from '@/types'
+import { ref, Ref } from 'vue'
+import type { Categories, Product } from '@/types'
 
 const [
   { data: categories },
   { data: products },
+]: [
+  { data: Ref<Categories[]> },
+  { data: Ref<Product[]> },
 ] = await Promise.all([
   useFetch('https://fakestoreapi.com/products/categories'),
   useFetch('https://fakestoreapi.com/products'),
@@ -16,7 +19,7 @@ const allCategories: Categories[] = [ALL, ...categories.value]
 
 const selectedCategory = ref<Categories>(ALL)
 
-const filteredProducts = computed(() => selectedCategory.value !== ALL
+const filteredProducts = computed<Product[]>(() => selectedCategory.value !== ALL
   ? products.value.filter(({ category }) => category === selectedCategory.value)
   : products.value,
 )
