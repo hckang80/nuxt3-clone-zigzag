@@ -45,7 +45,7 @@ const checkedProducts = ref<number[]>([])
         :key="category"
         class="main-categories__item"
       >
-        <button @click="selectedCategory = category">
+        <button @click="selectedCategory !== category && (selectedCategory = category)">
           {{ category }}
         </button>
       </li>
