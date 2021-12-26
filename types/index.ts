@@ -1,4 +1,5 @@
 export type Categories =
+  'all' |
   'electronics' |
   'jewelery' |
   'men\'s clothing' |

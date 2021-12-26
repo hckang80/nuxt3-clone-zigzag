@@ -10,9 +10,11 @@ const [
   useFetch('https://fakestoreapi.com/products'),
 ])
 
-const selectedCategory = ref<Categories | ''>('')
+const allCategories: Categories[] = ['all', ...categories.value]
 
-const filteredProducts = computed(() => selectedCategory.value
+const selectedCategory = ref<Categories>('all')
+
+const filteredProducts = computed(() => selectedCategory.value !== 'all'
   ? products.value.filter(({ category }) => category === selectedCategory.value)
   : products.value,
 )
@@ -34,7 +36,7 @@ const checkedProducts = ref<number[]>([])
 
     <ul class="main-categories">
       <li
-        v-for="category in categories"
+        v-for="category in allCategories"
         :key="category"
         class="main-categories__item"
       >
