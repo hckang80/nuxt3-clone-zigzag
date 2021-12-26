@@ -43,7 +43,10 @@ const checkedProducts = ref<number[]>([])
       <li
         v-for="category in allCategories"
         :key="category"
-        class="main-categories__item"
+        :class="[
+          'main-categories__item',
+          { 'is-active': selectedCategory === category }
+        ]"
       >
         <button @click="selectedCategory !== category && (selectedCategory = category)">
           {{ category }}
