@@ -12,6 +12,11 @@ const [
 
 const selectedCategory = ref<Categories | ''>('')
 
+const filteredProducts = computed(() => selectedCategory.value
+  ? products.value.filter(({ category }) => category === selectedCategory.value)
+  : products.value,
+)
+
 const checkedProducts = ref<number[]>([])
 </script>
 
@@ -45,7 +50,7 @@ const checkedProducts = ref<number[]>([])
           id,
           image,
           title
-        } in products"
+        } in filteredProducts"
         :key="id"
         class="main-products__item"
       >
