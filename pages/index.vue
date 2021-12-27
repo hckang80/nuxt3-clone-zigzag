@@ -54,33 +54,38 @@ const checkedProducts = ref<number[]>([])
       </li>
     </ul>
 
-    <ul class="main-products">
-      <li
-        v-for="{
-          id,
-          image,
-          title
-        } in filteredProducts"
-        :key="id"
-        class="main-products__item"
-      >
-        <label>
-          <input
-            v-model="checkedProducts"
-            type="checkbox"
-            :value="id"
-          >
-          <span class="backdrop">
-            <i class="icon-heart" />
-          </span>
-          <img
-            :src="image"
-            :alt="title"
-            loading="lazy"
-          >
-        </label>
-      </li>
-    </ul>
+    <form>
+      <ul class="main-products">
+        <li
+          v-for="{
+            id,
+            image,
+            title
+          } in filteredProducts"
+          :key="id"
+          class="main-products__item"
+        >
+          <label>
+            <input
+              v-model="checkedProducts"
+              type="checkbox"
+              :value="id"
+            >
+            <span class="backdrop">
+              <i class="icon-heart" />
+            </span>
+            <img
+              :src="image"
+              :alt="title"
+              loading="lazy"
+            >
+          </label>
+        </li>
+      </ul>
+      <div class="head-button">
+        <button>선택완료</button>
+      </div>
+    </form>
   </article>
 </template>
 
