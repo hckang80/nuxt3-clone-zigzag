@@ -2,6 +2,8 @@
 import { ref, Ref } from 'vue'
 import type { Categories, Product } from '@/types'
 
+const { set } = useObject()
+
 const [
   { data: categories },
   { data: products },
@@ -25,6 +27,10 @@ const filteredProducts = computed<Product[]>(() => selectedCategory.value !== AL
 )
 
 const checkedProducts = ref<number[]>([])
+
+const saveMyStyles = () => {
+  set(localStorage, 'myStyles', JSON.stringify(checkedProducts.value))
+}
 </script>
 
 <template>
@@ -54,7 +60,7 @@ const checkedProducts = ref<number[]>([])
       </li>
     </ul>
 
-    <form>
+    <form @submit.prevent="saveMyStyles">
       <ul class="main-products">
         <li
           v-for="{
