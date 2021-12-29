@@ -97,19 +97,6 @@ const saveMyStyles = () => {
 </template>
 
 <style lang="scss" scoped>
-.select-my-style__header {
-  margin: 0 0 2em;
-  p {
-    color: var(--color-gray);
-    > strong {
-      margin: 0 0 0.5em;
-      font-size: 1.8rem;
-      line-height: 1.2;
-      color: var(--color-white);
-    }
-  }
-}
-
 .main-categories {
   overflow: auto;
   display: flex;
@@ -198,27 +185,6 @@ const saveMyStyles = () => {
   img {
     padding: 0.5em;
     max-height: 100%;
-  }
-}
-
-.head-button {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 4;
-  height: 4em;
-  padding: 0 1em;
-  background: var(--color-dark);
-  button {
-    padding: 0 0.5em;
-    background: var(--color-white);
-    color: var(--color-dark);
-    height: 2em;
-    border-radius: 15px;
   }
 }
 </style>
