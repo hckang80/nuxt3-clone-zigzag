@@ -106,10 +106,15 @@ const checkedProducts = ref<number[]>([])
 .main-categories {
   overflow: auto;
   display: flex;
-  margin: 0 -1em 1em 0;
+  position: sticky;
+  top: 4em;
+  z-index: 2;
+  margin: 0 -1em 0 0;
+  padding: 0 0 1em;
   gap: 0 1em;
   font-weight: bold;
   text-transform: capitalize;
+  background: var(--color-dark);
   &__item {
     white-space: nowrap;
     color: var(--color-gray);
@@ -186,6 +191,26 @@ const checkedProducts = ref<number[]>([])
   img {
     padding: 0.5em;
     max-height: 100%;
+  }
+}
+
+.head-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4em;
+  padding: 0 1em;
+  background: var(--color-dark);
+  button {
+    padding: 0 0.5em;
+    background: var(--color-white);
+    color: var(--color-dark);
+    height: 2em;
+    border-radius: 15px;
   }
 }
 </style>
