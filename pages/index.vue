@@ -39,6 +39,7 @@ const saveMyStyles = () => {
       <h1 hidden>
         내 스타일 선택하기
       </h1>
+      <i class="icon-heart" />
       <p>
         <strong block>좋아하는 스타일을<br> 알려주세요.</strong>
         매일 취향에 맞는 상품을 찾아올게요!
@@ -114,7 +115,7 @@ const saveMyStyles = () => {
   display: flex;
   position: sticky;
   top: 4em;
-  z-index: 2;
+  z-index: 4;
   margin: 0 -1em 0 0;
   padding: 0 0 1em;
   gap: 0 1em;
@@ -208,6 +209,7 @@ const saveMyStyles = () => {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 4;
   height: 4em;
   padding: 0 1em;
   background: var(--color-dark);

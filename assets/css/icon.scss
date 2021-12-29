@@ -4,6 +4,7 @@
   font-size: 1rem;
   width: 1em;
   height: 1em;
+  margin: .5em;
   position: relative;
   transform: rotate(45deg);
   
@@ -17,10 +18,10 @@
   }
   
   &::before {
-    left: -0.5em;
+    left: -.5em;
   }
   
   &::after {
-    top: -0.5em;
+    top: -.5em;
   }
 }
