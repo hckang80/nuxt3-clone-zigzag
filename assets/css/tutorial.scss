@@ -99,3 +99,36 @@
     border-radius: 15px;
   }
 }
+
+.store-list {
+  &__item:not(:first-child) {
+    margin: 1.5em 0 0;
+  }
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    margin: .5em 0 0;
+  }
+  &__summary {
+    display: flex;
+    align-items: center;
+    dl {
+      line-height: 1.2;
+    }
+    dt {
+      font-weight: bold;
+      font-size: .9em;
+    }
+    dd {
+      color: var(--color-gray);
+      font-size: .8em;
+    }
+  }
+  &__thumbnail {
+    overflow: hidden;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 0 .5em 0 0;
+  }
+}
