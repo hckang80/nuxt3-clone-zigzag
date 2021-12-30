@@ -25,3 +25,16 @@
     top: -.5em;
   }
 }
+
+.empty-stars {
+  &::before {
+    content: "\2605";
+    font-size: 2rem;
+    -webkit-text-stroke: 1px var(--color-white);
+    color: transparent;
+  }
+  &.is-selected::before {
+    -webkit-text-stroke: 1px var(--main-bg-color);
+    color: var(--main-bg-color);
+  }
+}

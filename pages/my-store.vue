@@ -83,7 +83,7 @@ const storeList = [
               </dl>
             </div>
             <button>
-              favorite
+              <i class="empty-stars is-selected"></i>
             </button>
           </div>
         </li>
