@@ -91,7 +91,10 @@ const selectStore = (id: number) => {
               </dl>
             </div>
             <button @click="selectStore(id)">
-              <i class="empty-stars is-selected"></i>
+              <i :class="[
+                'empty-stars',
+                { 'is-selected': selectedStores.has(id) }
+              ]"></i>
             </button>
           </div>
         </li>
