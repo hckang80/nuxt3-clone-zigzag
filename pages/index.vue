@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, Ref } from 'vue'
+import { ref } from 'vue'
 import type { Categories, Product } from '@/types'
 
 const { set } = useObject()
@@ -7,19 +7,16 @@ const { set } = useObject()
 const [
   { data: categories },
   { data: products },
-]: [
-  { data: Ref<Categories[]> },
-  { data: Ref<Product[]> },
 ] = await Promise.all([
-  useFetch('https://fakestoreapi.com/products/categories'),
-  useFetch('https://fakestoreapi.com/products'),
+  useFetch<string, Categories[]>('https://fakestoreapi.com/products/categories'),
+  useFetch<string, Product[]>('https://fakestoreapi.com/products'),
 ])
 
 const ALL = 'all'
 
 const allCategories: Categories[] = [ALL, ...categories.value]
 
-const selectedCategory = ref<Categories>(ALL)
+const selectedCategory = ref<Categories>(ALL);
 
 const filteredProducts = computed<Product[]>(() => selectedCategory.value !== ALL
   ? products.value.filter(({ category }) => category === selectedCategory.value)
