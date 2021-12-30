@@ -29,6 +29,14 @@ const storeList = [
     ]
   }
 ]
+
+const selectedStores = ref<Map<number, true>>(new Map())
+
+const selectStore = (id: number) => {
+  selectedStores.value.has(id)
+    ? selectedStores.value.delete(id)
+    : selectedStores.value.set(id, true)
+}
 </script>
 
 <template>
@@ -82,7 +90,7 @@ const storeList = [
                 <dd>{{ compactNumber(followers) }}</dd>
               </dl>
             </div>
-            <button>
+            <button @click="selectStore(id)">
               <i class="empty-stars is-selected"></i>
             </button>
           </div>
