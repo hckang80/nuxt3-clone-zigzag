@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { compactNumber } = useParser()
+
 const saveMyStores = () => {
   console.log('saveMyStores')
 }
@@ -77,7 +79,7 @@ const storeList = [
               </div>
               <dl>
                 <dt>{{ title }}</dt>
-                <dd>{{ followers }}</dd>
+                <dd>{{ compactNumber(followers) }}</dd>
               </dl>
             </div>
             <button>
