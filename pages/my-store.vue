@@ -6,8 +6,8 @@ const saveMyStores = () => {
 const storeList = [
   {
     id: 1,
-    title: 'RaRaNe',
-    follower: 375000,
+    title: 'RoRaNe',
+    followers: 375000,
     image: 'https://cdn.imweb.me/thumbnail/20211217/82aa128ce1000.jpg',
     products: [
       'https://cdn.imweb.me/thumbnail/20211206/98e3a1d0b3c15.jpg',
@@ -18,7 +18,7 @@ const storeList = [
   {
     id: 2,
     title: '로라네',
-    follower: 100000,
+    followers: 100000,
     image: 'https://cdn.imweb.me/thumbnail/20211217/82aa128ce1000.jpg',
     products: [
       'https://cdn.imweb.me/thumbnail/20211212/de855fd8acefc.jpg',
@@ -48,6 +48,7 @@ const storeList = [
           v-for="{
             id,
             image,
+            followers,
             title,
             products
           } in storeList"
@@ -69,6 +70,20 @@ const storeList = [
               </div>
             </li>
           </ul>
+          <div class="store-list__detail">
+            <div class="store-list__summary">
+              <div class="store-list__thumbnail">
+                <img :src="image" alt="">
+              </div>
+              <dl>
+                <dt>{{ title }}</dt>
+                <dd>{{ followers }}</dd>
+              </dl>
+            </div>
+            <button>
+              favorite
+            </button>
+          </div>
         </li>
       </ul>
       <div class="head-button">
