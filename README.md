@@ -1,29 +1,3 @@
-# Nuxt 3 Minimal Starter
+# 지그재그 앱 클론 코딩
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
-
-## Setup
-
-Make sure to install the dependencies
-
-```bash
-yarn install
-```
-
-## Development
-
-Start the development server on http://localhost:3000
-
-```bash
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-yarn build
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+포트폴리오를 목적으로 활발히 진행 중인 레포입니다.
