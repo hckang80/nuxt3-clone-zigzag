@@ -41,3 +41,14 @@
     transform: rotate(calc(360 * 10deg));
   }
 }
+
+.icon-star {
+  &::before {
+    transition: transform .3s;
+  }
+  &.is-selected::before {
+    -webkit-text-stroke: 1px var(--main-bg-color);
+    color: var(--main-bg-color);
+    transform: rotate(calc(360 * 10deg));
+  }
+}

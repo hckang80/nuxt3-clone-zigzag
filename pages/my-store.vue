@@ -91,10 +91,14 @@ const selectStore = (id: number) => {
               </dl>
             </div>
             <button @click="selectStore(id)">
-              <i :class="[
-                'empty-stars',
-                { 'is-selected': selectedStores.has(id) }
-              ]"></i>
+              <TextIcon
+                code="&starf;"
+                :plain="!selectedStores.has(id)"
+                :class="[
+                  'icon-star',
+                  { 'is-selected': selectedStores.has(id) }
+                ]"
+              />
             </button>
           </div>
         </li>
