@@ -36,7 +36,10 @@ const saveMyStyles = () => {
       <h1 hidden>
         내 스타일 선택하기
       </h1>
-      <i class="icon-heart" />
+      <TextIcon
+        code="&hearts;"
+        size="5rem"
+      />
       <p>
         <strong block>좋아하는 스타일을<br> 알려주세요.</strong>
         매일 취향에 맞는 상품을 찾아올게요!
@@ -76,7 +79,7 @@ const saveMyStyles = () => {
               :value="id"
             >
             <span class="backdrop">
-              <i class="icon-heart" />
+              <TextIcon code="&hearts;" />
             </span>
             <img
               :src="image"

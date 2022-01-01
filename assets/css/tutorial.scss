@@ -1,6 +1,11 @@
 
 .select-my-style__header {
   margin: 0 0 2em;
+  .text-icon {
+    &::before {
+      color: var(--main-bg-color);
+    }
+  }
   p {
     color: var(--color-gray);
     > strong {
@@ -24,14 +29,6 @@
     padding: 0 0 40%;
     background: var(--color-white);
   }
-  .is-checked {
-    .backdrop {
-      background: rgba(0, 0, 0, .5)
-    }
-    [class^=icon] {
-      top: 0;
-    }
-  }
   &__wrap {
     display: flex;
     justify-content: center;
@@ -47,9 +44,10 @@
     opacity: 0;
     &:checked + .backdrop {
       background: rgba(0, 0, 0, .5);
-      [class^=icon] {
+      .text-icon {
         top: 0;
         opacity: 1;
+        transform: translateY(0);
       }
     }
   }
@@ -62,16 +60,15 @@
     width: 100%;
     height: 100%;
   }
-  [class^=icon] {
-    transition: top .3s ease-in-out;
+  .text-icon {
+    position: relative;
+    top: 50%;
     opacity: 0;
-    top: 70%;
-    font-size: 1.8rem;
-    background-color: var(--color-white);
-    &::before,
-    &::after {
-      background-color: var(--color-white);
-    }
+    transform: translateY(100%);
+    transition: top .3s ease-in-out;
+      &::before {
+        font-size: 4rem;
+      }
   }
   img {
     padding: 0.5em;
