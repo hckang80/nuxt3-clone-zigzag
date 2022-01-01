@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import type { Categories, Product } from '@/types'
 
 const { set } = useObject()
+const router = useRouter()
 
 const [
   { data: categories },
@@ -27,6 +28,7 @@ const checkedProducts = ref<number[]>([])
 
 const saveMyStyles = () => {
   set(localStorage, 'myStyles', JSON.stringify(checkedProducts.value))
+  router.push('my-store')
 }
 </script>
 
