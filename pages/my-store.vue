@@ -53,6 +53,19 @@ const selectStore = (id: number) => {
     </header>
 
     <form @submit.prevent="saveMyStores">
+      <header class="all-selector">
+        <span class="all-selector__label">모두 즐겨찾기(0)</span>
+        <button>
+          <TextIcon
+            code="&starf;"
+            plain
+            :class="[
+              'icon-star',
+              { 'is-selected': false }
+            ]"
+          />
+        </button>
+      </header>
       <ul class="store-list">
         <li
           v-for="{
