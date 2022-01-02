@@ -68,7 +68,9 @@ const selectedAllStore = computed(() => storeList.length === selectedStores.valu
     <form @submit.prevent="saveMyStores">
       <header class="all-selector">
         <span class="all-selector__label">모두 즐겨찾기(0)</span>
-        <button @click="toggleAllStore(storeList)">
+        <button
+          type="button"
+          @click="toggleAllStore(storeList)">
           <TextIcon
             code="&starf;"
             :plain="!selectedAllStore"
@@ -116,7 +118,9 @@ const selectedAllStore = computed(() => storeList.length === selectedStores.valu
                 <dd>{{ compactNumber(followers) }}</dd>
               </dl>
             </div>
-            <button @click="selectStore(id)">
+            <button
+              type="button"
+              @click="selectStore(id)">
               <TextIcon
                 code="&starf;"
                 :plain="!selectedStores.has(id)"
