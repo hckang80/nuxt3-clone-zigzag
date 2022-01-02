@@ -1,14 +1,14 @@
 <script setup lang="ts">
-  // https://www.toptal.com/designers/htmlarrows/symbols/
+// https://www.toptal.com/designers/htmlarrows/symbols/
 
-  interface Props {
-    code: string
-    plain?: boolean
-    size?: string
-  }
+interface Props {
+  code: string
+  plain?: boolean
+  size?: string
+}
 
-  const props = defineProps<Props>()
-  const { code } = props
+const props = defineProps<Props>()
+const { code } = props
 </script>
 
 <template>
