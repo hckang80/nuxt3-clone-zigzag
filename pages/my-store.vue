@@ -32,11 +32,15 @@ const storeList = [
 
 const selectedStores = ref<Map<number, true>>(new Map())
 
-const toggleAllStore = (list: typeof storeList) => {
-  if (storeList.length === selectedStores.value.size) return selectedStores.value.clear()
+const selectAllStore = (list: typeof storeList) => {
   list.forEach(({ id }) => {
     selectedStores.value.set(id, true)
   })
+}
+
+const toggleAllStore = (list: typeof storeList) => {
+  if (selectedAllStore.value) return selectedStores.value.clear()
+  selectAllStore(list)
 }
 
 const selectStore = (id: number) => {
@@ -44,6 +48,8 @@ const selectStore = (id: number) => {
     ? selectedStores.value.delete(id)
     : selectedStores.value.set(id, true)
 }
+
+const selectedAllStore = computed(() => storeList.length === selectedStores.value.size)
 </script>
 
 <template>
@@ -65,10 +71,10 @@ const selectStore = (id: number) => {
         <button @click="toggleAllStore(storeList)">
           <TextIcon
             code="&starf;"
-            :plain="storeList.length !== selectedStores.size"
+            :plain="!selectedAllStore"
             :class="[
               'icon-star',
-              { 'is-selected': storeList.length === selectedStores.size }
+              { 'is-selected': selectedAllStore }
             ]"
           />
         </button>
