@@ -67,7 +67,7 @@ const selectedAllStore = computed(() => storeList.length === selectedStores.valu
 
     <form @submit.prevent="saveMyStores">
       <header class="all-selector">
-        <span class="all-selector__label">모두 즐겨찾기(0)</span>
+        <span class="all-selector__label">모두 즐겨찾기({{ selectedStores.size }})</span>
         <button
           type="button"
           @click="toggleAllStore(storeList)">
