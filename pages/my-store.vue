@@ -32,6 +32,13 @@ const storeList = [
 
 const selectedStores = ref<Map<number, true>>(new Map())
 
+const toggleAllStore = (list: typeof storeList) => {
+  if (storeList.length === selectedStores.value.size) return selectedStores.value.clear()
+  list.forEach(({ id }) => {
+    selectedStores.value.set(id, true)
+  })
+}
+
 const selectStore = (id: number) => {
   selectedStores.value.has(id)
     ? selectedStores.value.delete(id)
@@ -55,13 +62,13 @@ const selectStore = (id: number) => {
     <form @submit.prevent="saveMyStores">
       <header class="all-selector">
         <span class="all-selector__label">모두 즐겨찾기(0)</span>
-        <button>
+        <button @click="toggleAllStore(storeList)">
           <TextIcon
             code="&starf;"
-            plain
+            :plain="storeList.length !== selectedStores.size"
             :class="[
               'icon-star',
-              { 'is-selected': false }
+              { 'is-selected': storeList.length === selectedStores.size }
             ]"
           />
         </button>
