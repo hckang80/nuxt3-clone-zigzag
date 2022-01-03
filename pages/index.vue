@@ -17,7 +17,7 @@ const ALL = 'all'
 
 const allCategories: Categories[] = [ALL, ...categories.value]
 
-const selectedCategory = ref<Categories>(ALL);
+const selectedCategory = ref<Categories>(ALL)
 
 const filteredProducts = computed<Product[]>(() => selectedCategory.value !== ALL
   ? products.value.filter(({ category }) => category === selectedCategory.value)

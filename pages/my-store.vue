@@ -2,10 +2,6 @@
 const { compactNumber } = useParser()
 const { set } = useObject()
 
-const saveMyStores = () => {
-  set(localStorage, 'myStores', JSON.stringify([...selectedStores.value.keys()]))
-}
-
 const storeList = [
   {
     id: 1,
@@ -16,7 +12,7 @@ const storeList = [
       'https://cdn.imweb.me/thumbnail/20211206/98e3a1d0b3c15.jpg',
       'https://cdn.imweb.me/thumbnail/20211211/99626274c06a9.jpg',
       'https://cdn.imweb.me/thumbnail/20211124/fce4d812dcd1e.jpg',
-    ]
+    ],
   },
   {
     id: 2,
@@ -27,8 +23,8 @@ const storeList = [
       'https://cdn.imweb.me/thumbnail/20211212/de855fd8acefc.jpg',
       'https://cdn.imweb.me/thumbnail/20210730/ee1dd33ea5789.jpg',
       'https://cdn.imweb.me/thumbnail/20210801/e3cebc27663fb.jpg',
-    ]
-  }
+    ],
+  },
 ]
 
 const selectedStores = ref<Map<number, true>>(new Map())
@@ -39,9 +35,8 @@ const selectAllStore = (list: typeof storeList) => {
   })
 }
 
-const toggleAllStore = (list: typeof storeList) => {
-  if (selectedAllStore.value) return selectedStores.value.clear()
-  selectAllStore(list)
+const saveMyStores = () => {
+  set(localStorage, 'myStores', JSON.stringify([...selectedStores.value.keys()]))
 }
 
 const selectStore = (id: number) => {
@@ -51,6 +46,11 @@ const selectStore = (id: number) => {
 }
 
 const selectedAllStore = computed(() => storeList.length === selectedStores.value.size)
+
+const toggleAllStore = (list: typeof storeList) => {
+  if (selectedAllStore.value) return selectedStores.value.clear()
+  selectAllStore(list)
+}
 </script>
 
 <template>
@@ -71,7 +71,8 @@ const selectedAllStore = computed(() => storeList.length === selectedStores.valu
         <span class="all-selector__label">모두 즐겨찾기({{ selectedStores.size }})</span>
         <button
           type="button"
-          @click="toggleAllStore(storeList)">
+          @click="toggleAllStore(storeList)"
+        >
           <TextIcon
             code="&starf;"
             :plain="!selectedAllStore"
@@ -121,7 +122,8 @@ const selectedAllStore = computed(() => storeList.length === selectedStores.valu
             </div>
             <button
               type="button"
-              @click="selectStore(id)">
+              @click="selectStore(id)"
+            >
               <TextIcon
                 code="&starf;"
                 :plain="!selectedStores.has(id)"

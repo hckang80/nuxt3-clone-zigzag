@@ -8,7 +8,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const { code } = props
 </script>
 
 <template>
@@ -20,8 +19,8 @@ const { code } = props
     ]"
     :style="{
       'font-size': size
-    }">
-  </i>
+    }"
+  />
 </template>
 
 <style lang="scss">
