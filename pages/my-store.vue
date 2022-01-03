@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const { compactNumber } = useParser()
+const { set } = useObject()
 
 const saveMyStores = () => {
-  console.log('saveMyStores')
+  set(localStorage, 'myStores', JSON.stringify([...selectedStores.value.keys()]))
 }
 
 const storeList = [
