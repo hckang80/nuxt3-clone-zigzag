@@ -2,27 +2,29 @@
 const { compactNumber } = useParser()
 const { set } = useObject()
 
+const BASE_URI = 'https://cdn.imweb.me/thumbnail'
+
 const storeList = [
   {
     id: 1,
     title: 'RoRaNe',
     followers: 375000,
-    image: 'https://cdn.imweb.me/thumbnail/20211217/82aa128ce1000.jpg',
+    image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
-      'https://cdn.imweb.me/thumbnail/20211206/98e3a1d0b3c15.jpg',
-      'https://cdn.imweb.me/thumbnail/20211211/99626274c06a9.jpg',
-      'https://cdn.imweb.me/thumbnail/20211124/fce4d812dcd1e.jpg',
+      `${BASE_URI}/20211206/98e3a1d0b3c15.jpg`,
+      `${BASE_URI}/20211211/99626274c06a9.jpg`,
+      `${BASE_URI}/20211124/fce4d812dcd1e.jpg`,
     ],
   },
   {
     id: 2,
     title: '로라네',
     followers: 100000,
-    image: 'https://cdn.imweb.me/thumbnail/20211217/82aa128ce1000.jpg',
+    image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
-      'https://cdn.imweb.me/thumbnail/20211212/de855fd8acefc.jpg',
-      'https://cdn.imweb.me/thumbnail/20210730/ee1dd33ea5789.jpg',
-      'https://cdn.imweb.me/thumbnail/20210801/e3cebc27663fb.jpg',
+      `${BASE_URI}/20211212/de855fd8acefc.jpg`,
+      `${BASE_URI}/20210730/ee1dd33ea5789.jpg`,
+      `${BASE_URI}/20210801/e3cebc27663fb.jpg`,
     ],
   },
 ]
