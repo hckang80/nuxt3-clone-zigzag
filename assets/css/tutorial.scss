@@ -50,7 +50,7 @@
   &__item {
     position: relative;
     flex-basis: calc((100% / 3) - 1px);
-    padding: 0 0 40%;
+    padding: 0 0 33.5%;
     background: var(--color-white);
   }
   &__wrap {
@@ -95,7 +95,6 @@
       }
   }
   img {
-    padding: 0.5em;
     max-height: 100%;
   }
 }
