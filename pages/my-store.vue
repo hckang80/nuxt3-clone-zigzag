@@ -27,6 +27,17 @@ const storeList = [
       `${BASE_URI}/20210801/e3cebc27663fb.jpg`,
     ],
   },
+  {
+    id: 3,
+    title: '로라네 악세사리',
+    followers: 100000000,
+    image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
+    products: [
+      `${BASE_URI}/20211206/984e01687749a.jpg`,
+      `${BASE_URI}/20211208/b48b4542b3050.jpg`,
+      `${BASE_URI}/20210801/e3cebc27663fb.jpg`,
+    ],
+  },
 ]
 
 const selectedStores = ref<Map<number, true>>(new Map())
