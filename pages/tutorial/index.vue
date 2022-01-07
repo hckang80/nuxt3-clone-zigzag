@@ -28,7 +28,7 @@ const checkedProducts = ref<number[]>([])
 
 const saveMyStyles = () => {
   set(localStorage, 'myStyles', JSON.stringify(checkedProducts.value))
-  router.push('my-store')
+  router.push('/tutorial/my-store')
 }
 </script>
 
