@@ -1,0 +1,12 @@
+.main-categories {
+  height: 100vh;
+  .swiper-slide:nth-child(1) {
+    background: var(--main-bg-color);
+  }
+  .swiper-slide:nth-child(2) {
+    background: var(--color-gray);
+  }
+  .swiper-slide:nth-child(3) {
+    background: var(--color-white);
+  }
+}
