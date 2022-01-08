@@ -3,6 +3,26 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as TSwiper } from 'swiper/types'
 import 'swiper/css'
 
+const navItems = [
+  {
+    id: 1,
+    title: '홈'
+  },
+  {
+    id: 2,
+    title: 'brand'
+  },
+  {
+    id: 3,
+    title: '베스트'
+  },
+  {
+    id: 4,
+    title: '세일',
+    sup: 'N'
+  },
+]
+
 const onSwiper = (swiper: TSwiper) => {
   console.log(swiper)
 }
