@@ -2,6 +2,13 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as TSwiper } from 'swiper/types'
 import 'swiper/css'
+import 'swiper/css/pagination'
+import SwiperCore, {
+  Pagination
+} from 'swiper'
+
+SwiperCore.use([Pagination])
+
 
 const navItems = [
   {
@@ -23,6 +30,13 @@ const navItems = [
   },
 ]
 
+const pagination = {
+  clickable: true,
+  renderBullet (index: number, className: string) {
+    return `<span class="${className}">${navItems[index].title}</span>`
+  }
+}
+
 const onSwiper = (swiper: TSwiper) => {
   console.log(swiper)
 }
@@ -34,11 +48,15 @@ const onSlideChange = () => {
 <template>
   <div>
     <swiper
+      class="main-categories"
+      :pagination="pagination"
       @swiper="onSwiper"
       @slideChange="onSlideChange">
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide
+        v-for="({ id }) in navItems"
+        :key="id">
+        {{ id }}
+      </swiper-slide>
     </swiper>
   </div>
 </template>
