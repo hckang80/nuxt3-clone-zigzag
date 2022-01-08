@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  layout: "tutorial",
+}
+</script>
+
 <script setup lang="ts">
 const { compactNumber } = useParser()
 const { set } = useObject()

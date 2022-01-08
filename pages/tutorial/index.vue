@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  layout: "tutorial",
+}
+</script>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Categories, Product } from '@/types'
