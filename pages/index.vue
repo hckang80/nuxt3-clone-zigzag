@@ -17,7 +17,6 @@ import SwiperCore, {
 
 SwiperCore.use([Pagination])
 
-
 const navItems = [
   {
     id: 1,
@@ -56,7 +55,7 @@ const onSlideChange = () => {
 <template>
   <div>
     <swiper
-      class="main-categories"
+      class="main-tabs"
       :pagination="pagination"
       @swiper="onSwiper"
       @slideChange="onSlideChange">
