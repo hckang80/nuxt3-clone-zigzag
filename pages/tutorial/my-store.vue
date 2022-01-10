@@ -5,6 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
+const router = useRouter()
 const { compactNumber } = useParser()
 const { set } = useObject()
 
@@ -56,6 +57,7 @@ const selectAllStore = (list: typeof storeList) => {
 
 const saveMyStores = () => {
   set(localStorage, 'myStores', JSON.stringify([...selectedStores.value.keys()]))
+  router.push('/')
 }
 
 const selectStore = (id: number) => {

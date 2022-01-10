@@ -1,3 +1,11 @@
+<script lang="ts">
+export default {
+  beforeRouteEnter (to, from, next) {
+    next(!!globalThis.localStorage?.getItem('myStores') || '/tutorial')
+  }
+}
+</script>
+
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as TSwiper } from 'swiper/types'
