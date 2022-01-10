@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  layout: "tutorial",
-}
-</script>
-
 <script setup lang="ts">
 const router = useRouter()
 const { compactNumber } = useParser()
