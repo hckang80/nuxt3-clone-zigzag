@@ -1,7 +1,10 @@
 <script lang="ts">
+import type { RouteLocationNormalized } from 'vue-router'
+
 export default {
-  beforeRouteEnter (to, from, next) {
-    next(!!globalThis.localStorage?.getItem('myStores') || '/tutorial')
+  beforeRouteEnter: (to: RouteLocationNormalized, from: RouteLocationNormalized, next: (arg: boolean | string) => void) => {
+    const path = !!from.name || '/tutorial'
+    next(path)
   }
 }
 </script>
