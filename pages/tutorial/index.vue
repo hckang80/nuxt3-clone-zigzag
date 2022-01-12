@@ -71,6 +71,7 @@ const saveMyStyles = () => {
             image,
             title
           } in filteredProducts"
+          v-model="checkedProducts"
           :key="id"
           :id="id"
           :image="image"
