@@ -65,31 +65,17 @@ const saveMyStyles = () => {
 
     <form @submit.prevent="saveMyStyles">
       <ul class="main-products">
-        <li
+        <BaseListItem
           v-for="{
             id,
             image,
             title
           } in filteredProducts"
           :key="id"
-          class="main-products__item"
-        >
-          <label class="main-products__wrap">
-            <input
-              v-model="checkedProducts"
-              type="checkbox"
-              :value="id"
-            >
-            <span class="backdrop">
-              <TextIcon code="&hearts;" />
-            </span>
-            <img
-              :src="image"
-              :alt="title"
-              loading="lazy"
-            >
-          </label>
-        </li>
+          :id="id"
+          :image="image"
+          :title="title"
+        />
       </ul>
       <div class="head-button">
         <button>선택완료</button>
