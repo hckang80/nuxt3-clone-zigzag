@@ -63,8 +63,7 @@ const onSlideChange = () => {
       @swiper="onSwiper"
       @slideChange="onSlideChange">
       <swiper-slide
-        v-for="({ id }) in navItems"
-        :key="id">
+        v-for="({ id }) in navItems">
         {{ id }}
       </swiper-slide>
     </swiper>

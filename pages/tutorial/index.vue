@@ -51,7 +51,6 @@ const saveMyStyles = () => {
     <ul class="main-categories">
       <li
         v-for="category in allCategories"
-        :key="category"
         :class="[
           'main-categories__item',
           { 'is-active': selectedCategory === category }

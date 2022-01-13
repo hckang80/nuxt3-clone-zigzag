@@ -107,7 +107,6 @@ const toggleAllStore = (list: typeof storeList) => {
             title,
             products
           } in storeList"
-          :key="id"
           class="store-list__item"
         >
           <ul class="main-products">
