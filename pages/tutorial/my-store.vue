@@ -12,9 +12,9 @@ const storeList = [
     followers: 375000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
-      `${BASE_URI}/20211206/98e3a1d0b3c15.jpg`,
-      `${BASE_URI}/20211211/99626274c06a9.jpg`,
-      `${BASE_URI}/20211124/fce4d812dcd1e.jpg`,
+      { image: `${BASE_URI}/20211206/984e01687749a.jpg`, title: '써지컬스틸] 아이스다이아 피어싱(귀걸이가능)' },
+      { image: `${BASE_URI}/20211208/b48b4542b3050.jpg`, title: '써지컬스틸] 아이스큐빅바 피어싱(귀걸이가능)' },
+      { image: `${BASE_URI}/20211124/fce4d812dcd1e.jpg`, title: '써지컬스틸] 아이스테디베어 피어싱(귀걸이가능)' },
     ],
   },
   {
@@ -23,9 +23,9 @@ const storeList = [
     followers: 100000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
-      `${BASE_URI}/20211212/de855fd8acefc.jpg`,
-      `${BASE_URI}/20210730/ee1dd33ea5789.jpg`,
-      `${BASE_URI}/20210801/e3cebc27663fb.jpg`,
+      { image: `${BASE_URI}/20211212/de855fd8acefc.jpg`, title: '실버925] 별빛티어즈블루 은침귀걸이 / 겨울스페셜 벨벳하트케이스증정' },
+      { image: `${BASE_URI}/20211206/98e3a1d0b3c15.jpg`, title: '실버925] 투하트아이스목성 은침귀걸이 / 겨울스페셜 선물케이스함께증정' },
+      { image: `${BASE_URI}/20211211/99626274c06a9.jpg`, title: '스와로브스키] 루피너스아이스 은침귀걸이 / 겨울스페셜 벨벳하트케이스증정' },
     ],
   },
   {
@@ -34,9 +34,9 @@ const storeList = [
     followers: 100000000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
-      `${BASE_URI}/20211206/984e01687749a.jpg`,
-      `${BASE_URI}/20211208/b48b4542b3050.jpg`,
-      `${BASE_URI}/20210801/e3cebc27663fb.jpg`,
+      { image: `${BASE_URI}/20210730/ee1dd33ea5789.jpg`, title: '헤어끈 핑크/블루/블랙 12묶음 세트' },
+      { image: `${BASE_URI}/20210802/3cd10d0ef470e.jpg`, title: '플라워리본헤어밴드' },
+      { image: `${BASE_URI}/20210801/e3cebc27663fb.jpg`, title: '*HOTSALE*폰케이스 미니크로스백' },
     ],
   },
 ]
@@ -111,19 +111,15 @@ const toggleAllStore = (list: typeof storeList) => {
           class="store-list__item"
         >
           <ul class="main-products">
-            <li
-              v-for="(src, index) in products"
-              :key="index"
-              class="main-products__item"
-            >
-              <div class="main-products__wrap">
-                <img
-                  :src="src"
-                  alt=""
-                  loading="lazy"
-                >
-              </div>
-            </li>
+            <BaseListItem
+              v-for="{
+                image,
+                title
+              } in products"
+              :id="title"
+              :image="image"
+              :title="title">
+            </BaseListItem>
           </ul>
           <div class="store-list__detail">
             <div class="store-list__summary">

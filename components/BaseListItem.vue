@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  id: number
+  id: number | string
   image: string
   title: string
 }
@@ -14,7 +14,7 @@ const props = defineProps<Props>()
       <slot></slot>
       <img
         :src="image"
-        :alt="title"
+        :alt="title || ''"
         loading="lazy"
       >
     </label>
