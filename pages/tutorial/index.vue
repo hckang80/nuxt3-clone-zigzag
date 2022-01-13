@@ -71,12 +71,19 @@ const saveMyStyles = () => {
             image,
             title
           } in filteredProducts"
-          v-model="checkedProducts"
           :key="id"
           :id="id"
           :image="image"
-          :title="title"
-        />
+          :title="title">
+          <input
+            v-model="checkedProducts"
+            :value="id"
+            type="checkbox"
+          >
+          <span class="backdrop">
+            <TextIcon code="&hearts;" />
+          </span>
+        </BaseListItem>
       </ul>
       <div class="head-button">
         <button>선택완료</button>
