@@ -1,5 +1,24 @@
 .main-tabs {
   height: 100vh;
+  div.swiper-pagination {
+    display: flex;
+    justify-content: space-around;
+    position: static;
+    width: auto;
+    margin: 0 1em;
+  }
+  .swiper-pagination-bullet {
+    flex: 1;
+    width: auto;
+    height: 3em;
+    line-height: 3em;
+    background: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    &:not(.swiper-pagination-bullet-active) {
+      opacity: .5;
+    }
+  }
   .swiper-slide:nth-child(1) {
     background: var(--main-bg-color);
   }
