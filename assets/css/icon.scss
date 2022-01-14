@@ -10,3 +10,26 @@
     transform: rotate(calc(360deg * 10));
   }
 }
+
+.icon-heart {
+  width: 16px;
+  height: 16px;
+  background: var(--main-bg-color);
+  position: relative;
+  transform: rotate(45deg);
+  &::before,
+  &::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--main-bg-color);
+  }
+  &::before {
+    left: -50%;
+  }
+  &::after {
+    top: -50%;
+  }
+}
