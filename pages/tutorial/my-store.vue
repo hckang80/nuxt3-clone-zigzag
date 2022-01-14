@@ -8,7 +8,7 @@ const BASE_URI = 'https://cdn.imweb.me/thumbnail'
 const storeList = [
   {
     id: 1,
-    title: 'RoRaNe',
+    title: 'rorane.com',
     followers: 375000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
@@ -19,7 +19,7 @@ const storeList = [
   },
   {
     id: 2,
-    title: '로라네',
+    title: '로라네 악세사리',
     followers: 100000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
@@ -30,7 +30,7 @@ const storeList = [
   },
   {
     id: 3,
-    title: '로라네 악세사리',
+    title: 'RoRaNe',
     followers: 100000000,
     image: `${BASE_URI}/20211217/82aa128ce1000.jpg`,
     products: [
