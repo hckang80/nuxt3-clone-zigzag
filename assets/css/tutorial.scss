@@ -1,6 +1,9 @@
 
 .select-my-style__header {
   margin: 0 0 2em;
+  .icon-heart {
+    margin: 10px 0;
+  }
   .text-icon {
     &::before {
       color: var(--main-bg-color);
@@ -68,10 +71,10 @@
     opacity: 0;
     &:checked + .backdrop {
       background: rgba(0, 0, 0, .5);
-      .text-icon {
+      .icon-heart {
         top: 0;
         opacity: 1;
-        transform: translateY(0);
+        transform: rotate(45deg) translateY(0);
       }
     }
   }
@@ -84,14 +87,20 @@
     width: 100%;
     height: 100%;
   }
-  .text-icon {
+  .icon-heart {
     position: relative;
     top: 50%;
     opacity: 0;
-    transform: translateY(100%);
+    transform: rotate(45deg) translateY(100%);
     transition: top .3s ease-in-out;
-      &::before {
-        font-size: 4rem;
+    width: 14px;
+    height: 14px;
+    background: var(--color-white);
+      &::before,
+      &::after {
+        width: 14px;
+        height: 14px;
+        background: var(--color-white);
       }
   }
   img {
