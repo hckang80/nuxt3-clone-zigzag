@@ -87,29 +87,3 @@ const saveMyStyles = () => {
     </form>
   </article>
 </template>
-
-<style lang="scss" scoped>
-.main-categories {
-  overflow: auto;
-  display: flex;
-  position: sticky;
-  top: 4em;
-  z-index: 4;
-  margin: 0 -1em 0 0;
-  padding: 0 0 1em;
-  gap: 0 1em;
-  font-weight: bold;
-  text-transform: capitalize;
-  background: var(--color-dark);
-  &__item {
-    white-space: nowrap;
-    color: var(--color-gray);
-    &.is-active {
-      color: inherit;
-    }
-    button {
-      text-transform: capitalize;
-    }
-  }
-}
-</style>
