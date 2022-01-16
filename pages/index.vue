@@ -23,23 +23,28 @@ SwiperCore.use([Pagination])
 const navItems = [
   {
     id: 1,
-    title: '홈'
+    title: '홈',
+    el: 'Home'
   },
   {
     id: 2,
-    title: '스토어'
+    title: '스토어',
+    el: 'Store'
   },
   {
     id: 3,
-    title: '모아보기'
+    title: '모아보기',
+    el: 'Collection'
   },
   {
     id: 4,
-    title: '찜'
+    title: '찜',
+    el: 'Pick'
   },
   {
     id: 5,
-    title: '마이페이지'
+    title: '마이페이지',
+    el: 'Mypage'
   },
 ]
 
@@ -68,8 +73,11 @@ const onSlideChange = () => {
       @swiper="onSwiper"
       @slideChange="onSlideChange">
       <swiper-slide
-        v-for="({ id }) in navItems">
-        {{ id }}
+        v-for="({ title, el }) in navItems">
+        <component
+          :is="el"
+          :title="title"
+        />
       </swiper-slide>
     </swiper>
   </div>
