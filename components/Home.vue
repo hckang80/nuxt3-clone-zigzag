@@ -49,7 +49,7 @@ const onSlideChange = () => {
 <template>
   <div>
     <swiper
-      class="main-tabs"
+      class="main-home"
       :pagination="pagination"
       @swiper="onSwiper"
       @slideChange="onSlideChange">
