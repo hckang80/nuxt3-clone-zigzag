@@ -27,25 +27,27 @@ const navItems = [
   },
   {
     id: 2,
-    title: 'brand'
+    title: '스토어'
   },
   {
     id: 3,
-    title: '베스트'
+    title: '모아보기'
   },
   {
     id: 4,
-    title: '세일',
-    sup: 'N'
+    title: '찜'
+  },
+  {
+    id: 5,
+    title: '마이페이지'
   },
 ]
 
 const pagination = {
   clickable: true,
   renderBullet (index: number, className: string) {
-    const { title, sup = '' } = navItems[index]
-    const supEl = sup && `<sup>${sup}<sup>`
-    return `<span class="${className}">${title}${supEl}</span>`
+    const { title } = navItems[index]
+    return `<span class="${className}">${title}</span>`
   }
 }
 
@@ -62,6 +64,7 @@ const onSlideChange = () => {
     <swiper
       class="main-tabs"
       :pagination="pagination"
+      :allowTouchMove="false"
       @swiper="onSwiper"
       @slideChange="onSlideChange">
       <swiper-slide
