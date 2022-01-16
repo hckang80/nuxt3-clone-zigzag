@@ -1,5 +1,25 @@
+.main-tabs {
+  margin: 0 0 3em;
+  > div.main-swiper-bullets {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid var(--color-gray);
+    background: var(--color-dark);
+    .swiper-pagination-bullet {
+      flex: 1;
+      width: auto;
+      height: 3em;
+      line-height: 3em;
+      background: none;
+      opacity: 1;
+    }
+  }
+}
+
 .main-home {
-  height: 100vh;
   div.swiper-pagination {
     display: flex;
     justify-content: space-around;
@@ -42,14 +62,5 @@
     right: 0;
     bottom: 0;
     border-bottom: 2px solid var(--color-white);
-  }
-  .swiper-slide:nth-child(1) {
-    background: var(--main-bg-color);
-  }
-  .swiper-slide:nth-child(2) {
-    background: var(--color-gray);
-  }
-  .swiper-slide:nth-child(3) {
-    background: var(--color-white);
   }
 }

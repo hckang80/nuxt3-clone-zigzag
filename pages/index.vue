@@ -11,7 +11,10 @@ export default {
 
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import type { Swiper as TSwiper } from 'swiper/types'
+import type {
+  Swiper as TSwiper,
+  PaginationOptions
+} from 'swiper/types'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import SwiperCore, {
@@ -48,7 +51,8 @@ const navItems = [
   },
 ]
 
-const pagination = {
+const pagination: PaginationOptions = {
+  modifierClass: 'main-swiper-',
   clickable: true,
   renderBullet (index: number, className: string) {
     const { title } = navItems[index]
