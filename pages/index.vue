@@ -15,8 +15,6 @@ import type {
   Swiper as TSwiper,
   PaginationOptions
 } from 'swiper/types'
-import 'swiper/css'
-import 'swiper/css/pagination'
 import SwiperCore, {
   Pagination
 } from 'swiper'

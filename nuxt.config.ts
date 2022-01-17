@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
   css: [
+    'swiper/css',
+    'swiper/css/pagination',
     '@/assets/css/index.scss',
   ],
   typescript: {

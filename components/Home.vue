@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as TSwiper } from 'swiper/types'
-import 'swiper/css'
-import 'swiper/css/pagination'
 import SwiperCore, {
   Pagination
 } from 'swiper'
@@ -56,6 +54,33 @@ const onSlideChange = () => {
       <swiper-slide
         v-for="({ title }) in navItems">
         {{ title }}
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
+        content<br><br>
       </swiper-slide>
     </swiper>
   </div>
