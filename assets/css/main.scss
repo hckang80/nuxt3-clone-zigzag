@@ -1,5 +1,4 @@
 .main-tabs {
-  margin: 0 0 3em;
   > div.main-swiper-bullets {
     display: flex;
     position: fixed;
@@ -33,12 +32,19 @@
 }
 
 .main-home {
+  overflow: auto;
+  height: 100vh;
+  padding: 4em 0;
   div.swiper-pagination {
     display: flex;
     justify-content: space-around;
-    position: static;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
     width: auto;
     padding: 0 1em;
+    background: var(--color-dark);
     &::before {
       content: '';
       position: absolute;
@@ -75,5 +81,8 @@
     right: 0;
     bottom: 0;
     border-bottom: 2px solid var(--color-white);
+  }
+  .swiper-wrapper {
+    height: auto;
   }
 }
