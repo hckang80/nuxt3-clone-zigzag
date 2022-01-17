@@ -16,6 +16,19 @@
       background: none;
       opacity: 1;
     }
+    .swiper-pagination-bullet-active {
+      animation-duration: .3s;
+      animation-name: scalein;
+    }
+  }
+}
+
+@keyframes scalein {
+  from {
+    transform: scale(.8);
+  }
+  to {
+    transform: scale(1);
   }
 }
 
