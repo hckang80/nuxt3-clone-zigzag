@@ -111,14 +111,11 @@ const toggleAllStore = (list: typeof storeList) => {
         >
           <ul class="main-products">
             <BaseListItem
-              v-for="{
-                image,
-                title
-              } in products"
-              :id="title"
-              :image="image"
-              :title="title">
-            </BaseListItem>
+              v-for="product in products"
+              :id="product.title"
+              :image="product.image"
+              :title="product.title"
+            />
           </ul>
           <div class="store-list__detail">
             <div class="store-list__summary">

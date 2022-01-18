@@ -20,7 +20,7 @@ const props = defineProps<Props>()
     :style="{
       'font-size': size
     }"
-  />
+  ></i>
 </template>
 
 <style lang="scss">

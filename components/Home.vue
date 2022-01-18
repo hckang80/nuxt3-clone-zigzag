@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import type { Swiper as TSwiper } from 'swiper/types'
 import SwiperCore, {
-  Pagination
+  Pagination,
 } from 'swiper'
 
 SwiperCore.use([Pagination])
@@ -10,37 +9,30 @@ SwiperCore.use([Pagination])
 const navItems = [
   {
     id: 1,
-    title: '홈'
+    title: '홈',
   },
   {
     id: 2,
-    title: 'brand'
+    title: 'brand',
   },
   {
     id: 3,
-    title: '베스트'
+    title: '베스트',
   },
   {
     id: 4,
     title: '세일',
-    sup: 'N'
+    sup: 'N',
   },
 ]
 
 const pagination = {
   clickable: true,
-  renderBullet (index: number, className: string) {
+  renderBullet(index: number, className: string) {
     const { title, sup = '' } = navItems[index]
     const supEl = sup && `<sup>${sup}<sup>`
     return `<span class="${className}">${title}${supEl}</span>`
-  }
-}
-
-const onSwiper = (swiper: TSwiper) => {
-  console.log(swiper)
-}
-const onSlideChange = () => {
-  console.log('slide change')
+  },
 }
 </script>
 
@@ -49,10 +41,10 @@ const onSlideChange = () => {
     <swiper
       class="main-home"
       :pagination="pagination"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange">
+    >
       <swiper-slide
-        v-for="({ title }) in navItems">
+        v-for="({ title }) in navItems"
+      >
         {{ title }}
         content<br><br>
         content<br><br>

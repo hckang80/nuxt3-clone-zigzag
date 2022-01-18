@@ -16,7 +16,8 @@ const isTutorial = computed(() => {
 
 <template>
   <main
-    :class="['main-container', { 'main-container--tutorial': isTutorial }]">
-    <slot />
+    :class="['main-container', { 'main-container--tutorial': isTutorial }]"
+  >
+    <slot></slot>
   </main>
 </template>

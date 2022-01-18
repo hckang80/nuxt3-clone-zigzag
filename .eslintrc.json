@@ -1,3 +1,17 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "rules": {
+    "import/first": "off",
+    "vue/require-v-for-key": "off",
+    "vue/valid-v-for": "off",
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
+    }]
+  }
 }
