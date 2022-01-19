@@ -33,3 +33,10 @@
     top: -50%;
   }
 }
+
+.input-button {
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+}

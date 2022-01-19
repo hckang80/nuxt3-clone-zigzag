@@ -73,24 +73,21 @@ const toggleAllStore = () => {
     <form @submit.prevent="saveMyStores">
       <header class="all-selector">
         <span class="all-selector__label">모두 즐겨찾기({{ selectedStores.length }})</span>
-        <input
-          type="checkbox"
-          :checked="selectedAllStore"
-          @change="toggleAllStore"
-        >
-        <!-- <button
-          type="button"
-          @click="toggleAllStore(storeList)"
-        >
-        <TextIcon
-          code="&starf;"
-          :plain="!selectedAllStore"
-          :class="[
-            'icon-star',
-            { 'is-selected': selectedAllStore }
-          ]"
-        />
-        </button> -->
+        <label class="input-button">
+          <input
+            type="checkbox"
+            :checked="selectedAllStore"
+            @change="toggleAllStore"
+          >
+          <TextIcon
+            code="&starf;"
+            :plain="!selectedAllStore"
+            :class="[
+              'icon-star',
+              { 'is-selected': selectedAllStore }
+            ]"
+          />
+        </label>
       </header>
       <ul class="store-list">
         <li
@@ -121,24 +118,21 @@ const toggleAllStore = () => {
                 <dd>{{ compactNumber(followers) }}</dd>
               </dl>
             </div>
-            <input
-              v-model="selectedStores"
-              type="checkbox"
-              :value="id"
-            >
-            <!-- <button
-              type="button"
-              @click="selectStore(id)"
-            >
+            <label class="input-button">
+              <input
+                v-model="selectedStores"
+                type="checkbox"
+                :value="id"
+              >
               <TextIcon
                 code="&starf;"
-                :plain="!selectedStores.has(id)"
+                :plain="!selectedStores.includes(id)"
                 :class="[
                   'icon-star',
-                  { 'is-selected': selectedStores.has(id) }
+                  { 'is-selected': selectedStores.includes(id) }
                 ]"
               />
-            </button> -->
+            </label>
           </div>
         </li>
       </ul>
