@@ -6,22 +6,22 @@ const { set } = useObject()
 const router = useRouter()
 
 const [
-  { data: categories },
-  { data: products },
+  categories,
+  products,
 ] = await Promise.all([
-  useFetch<string, Categories[]>('https://fakestoreapi.com/products/categories'),
-  useFetch<string, Product[]>('https://fakestoreapi.com/products'),
+  fetch('https://fakestoreapi.com/products/categories').then(res => res.json() as Promise<Categories[]>),
+  fetch('https://fakestoreapi.com/products').then(res => res.json() as Promise<Product[]>),
 ])
 
 const ALL = 'all'
 
-const allCategories: Categories[] = [ALL, ...categories.value]
+const allCategories: Categories[] = [ALL, ...categories]
 
 const selectedCategory = ref<Categories>(ALL)
 
 const filteredProducts = computed<Product[]>(() => selectedCategory.value !== ALL
-  ? products.value.filter(({ category }) => category === selectedCategory.value)
-  : products.value,
+  ? products.filter(({ category }) => category === selectedCategory.value)
+  : products,
 )
 
 const checkedProducts = ref<number[]>([])
