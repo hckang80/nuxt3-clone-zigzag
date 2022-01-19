@@ -41,30 +41,19 @@ const storeList = [
   },
 ]
 
-const selectedStores = ref<Map<number, true>>(new Map())
-
-const selectAllStore = (list: typeof storeList) => {
-  list.forEach(({ id }) => {
-    selectedStores.value.set(id, true)
-  })
-}
+const selectedStores = ref<number[]>([])
 
 const saveMyStores = () => {
-  set(localStorage, 'myStores', JSON.stringify([...selectedStores.value.keys()]))
+  set(localStorage, 'myStores', JSON.stringify([...selectedStores.value]))
   router.push('/')
 }
 
-const selectStore = (id: number) => {
-  selectedStores.value.has(id)
-    ? selectedStores.value.delete(id)
-    : selectedStores.value.set(id, true)
-}
+const selectedAllStore = computed(() => selectedStores.value.length === storeList.length)
 
-const selectedAllStore = computed(() => storeList.length === selectedStores.value.size)
-
-const toggleAllStore = (list: typeof storeList) => {
-  if (selectedAllStore.value) return selectedStores.value.clear()
-  selectAllStore(list)
+const toggleAllStore = () => {
+  selectedStores.value = selectedAllStore.value
+    ? []
+    : storeList.map(({ id }) => id)
 }
 </script>
 
@@ -83,20 +72,25 @@ const toggleAllStore = (list: typeof storeList) => {
 
     <form @submit.prevent="saveMyStores">
       <header class="all-selector">
-        <span class="all-selector__label">모두 즐겨찾기({{ selectedStores.size }})</span>
-        <button
+        <span class="all-selector__label">모두 즐겨찾기({{ selectedStores.length }})</span>
+        <input
+          type="checkbox"
+          :checked="selectedAllStore"
+          @change="toggleAllStore"
+        >
+        <!-- <button
           type="button"
           @click="toggleAllStore(storeList)"
         >
-          <TextIcon
-            code="&starf;"
-            :plain="!selectedAllStore"
-            :class="[
-              'icon-star',
-              { 'is-selected': selectedAllStore }
-            ]"
-          />
-        </button>
+        <TextIcon
+          code="&starf;"
+          :plain="!selectedAllStore"
+          :class="[
+            'icon-star',
+            { 'is-selected': selectedAllStore }
+          ]"
+        />
+        </button> -->
       </header>
       <ul class="store-list">
         <li
@@ -127,7 +121,12 @@ const toggleAllStore = (list: typeof storeList) => {
                 <dd>{{ compactNumber(followers) }}</dd>
               </dl>
             </div>
-            <button
+            <input
+              v-model="selectedStores"
+              type="checkbox"
+              :value="id"
+            >
+            <!-- <button
               type="button"
               @click="selectStore(id)"
             >
@@ -139,7 +138,7 @@ const toggleAllStore = (list: typeof storeList) => {
                   { 'is-selected': selectedStores.has(id) }
                 ]"
               />
-            </button>
+            </button> -->
           </div>
         </li>
       </ul>
