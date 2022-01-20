@@ -36,12 +36,12 @@
 
 .main-home {
   overflow-y: auto;
-  height: 100vh;
-  padding: 3em 0;
+  height: calc(100vh - 3em);
+  padding: 0 0 3em;
   div.swiper-pagination {
     display: flex;
     justify-content: space-around;
-    position: fixed;
+    position: sticky;
     top: 0;
     right: 0;
     bottom: auto;
