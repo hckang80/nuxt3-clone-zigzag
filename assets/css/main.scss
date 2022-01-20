@@ -35,9 +35,9 @@
 }
 
 .main-home {
-  overflow: auto;
+  overflow-y: auto;
   height: 100vh;
-  padding: 4em 0;
+  padding: 3em 0;
   div.swiper-pagination {
     display: flex;
     justify-content: space-around;
@@ -87,5 +87,8 @@
   }
   .swiper-wrapper {
     height: auto;
+  }
+  .swiper-slide {
+    padding: 1em;
   }
 }
