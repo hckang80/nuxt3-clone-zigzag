@@ -30,7 +30,7 @@ const pagination = {
   clickable: true,
   renderBullet(index: number, className: string) {
     const { title, sup = '' } = navItems[index]
-    const supEl = sup && `<sup>${sup}<sup>`
+    const supEl = sup && `<sup>${sup}</sup>`
     return `<span class="${className}">${title}${supEl}</span>`
   },
 }
