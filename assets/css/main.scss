@@ -14,10 +14,13 @@
       line-height: 3em;
       background: none;
       opacity: 1;
+      border-radius: 0;
     }
     .swiper-pagination-bullet-active {
       animation-duration: .3s;
       animation-name: scalein;
+      background: var(--color-white);
+      color: var(--color-dark);
     }
   }
 }
