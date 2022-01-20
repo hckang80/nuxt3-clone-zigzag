@@ -2,8 +2,8 @@
 const router = useRouter()
 const { compactNumber } = useParser()
 const { set } = useObject()
-
-const BASE_URI = 'https://cdn.imweb.me/thumbnail'
+const config = useRuntimeConfig()
+const { baseUrl: BASE_URI } = config
 
 const storeList = [
   {
