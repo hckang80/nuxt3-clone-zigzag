@@ -37,7 +37,29 @@ const pagination = {
 </script>
 
 <template>
-  <div>
+  <section>
+    <header>
+      <div class="util-menu">
+        <h1 class="util-menu__title">
+          ZIGZAG
+        </h1>
+        <button class="search-form">
+          검색어를 입력해주세요
+        </button>
+        <aside class="util-menu__aside">
+          <button>
+            <base-svg
+              width="20"
+              height="20"
+              color="#ff63ab"
+            >
+              <IconCart />
+            </base-svg>
+          </button>
+        </aside>
+      </div>
+    </header>
+
     <swiper
       class="main-home"
       :pagination="pagination"
@@ -75,5 +97,5 @@ const pagination = {
         content<br><br>
       </swiper-slide>
     </swiper>
-  </div>
+  </section>
 </template>
