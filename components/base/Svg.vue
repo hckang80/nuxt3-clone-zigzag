@@ -10,7 +10,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   width: 18,
   height: 18,
-  viewBox: '0 0 24 24',
+  viewBox: '0 0 20 20',
   name: '',
   color: '#fff',
 })
