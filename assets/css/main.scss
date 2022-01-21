@@ -125,7 +125,9 @@
     border-bottom: 2px solid var(--color-white);
   }
   .swiper-wrapper {
-    height: auto;
+    overflow: hidden;
+    width: 400%;
+    min-height: calc(100% - 3em);
   }
   .swiper-slide {
     padding: 1em;

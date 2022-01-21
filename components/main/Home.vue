@@ -71,6 +71,7 @@ const pagination = {
     <swiper
       class="main-home"
       :pagination="pagination"
+      auto-height
     >
       <swiper-slide
         v-for="({ title }) in navItems"
