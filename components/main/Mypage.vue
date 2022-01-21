@@ -10,6 +10,15 @@
             <base-svg
               width="20"
               height="20"
+              viewBox="0 0 28 28"
+            >
+              <IconBell />
+            </base-svg>
+          </button>
+          <button>
+            <base-svg
+              width="20"
+              height="20"
               color="#ff63ab"
             >
               <IconCart />
