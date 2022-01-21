@@ -2,8 +2,7 @@
 const router = useRouter()
 const { compactNumber } = useParser()
 const { set } = useObject()
-const config = useRuntimeConfig()
-const { baseUrl: BASE_URI } = config
+const { baseUrl: BASE_URI } = useRuntimeConfig()
 
 const storeList = [
   {
