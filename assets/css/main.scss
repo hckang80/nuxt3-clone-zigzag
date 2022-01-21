@@ -21,6 +21,22 @@
   }
 }
 
+.search-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 1em;
+  padding: .4em 1em;
+  font-size: 1.2rem;
+  border-radius: 2em;
+  background: var(--color-gray-dark);
+  color: var(--color-gray);
+  text-align: left;
+  svg {
+    margin: 0 .5em 0 0;
+  }
+}
+
 .main-tabs {
   > div.main-swiper-bullets {
     display: flex;
