@@ -69,7 +69,7 @@ const pagination: PaginationOptions = {
         v-for="({ title, el }) in navItems"
       >
         <component
-          :is="el"
+          :is="`Main${el}`"
           :title="title"
         />
       </swiper-slide>
