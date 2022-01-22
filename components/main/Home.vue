@@ -14,14 +14,17 @@ const navItems = [
   {
     id: 2,
     title: 'brand',
+    el: 'Brand',
   },
   {
     id: 3,
     title: '베스트',
+    el: 'Best',
   },
   {
     id: 4,
     title: '세일',
+    el: 'Sale',
     sup: 'N',
   },
 ]
@@ -74,36 +77,12 @@ const pagination = {
       auto-height
     >
       <swiper-slide
-        v-for="({ title }) in navItems"
+        v-for="({ title, el = '' }) in navItems"
       >
-        {{ title }}
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
-        content<br><br>
+        <component
+          :is="`Home${el}`"
+          :title="title"
+        />
       </swiper-slide>
     </swiper>
   </section>
