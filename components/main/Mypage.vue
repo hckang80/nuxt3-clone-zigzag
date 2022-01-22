@@ -1,9 +1,17 @@
+<script setup lang="ts">
+interface Props {
+  title: string
+}
+
+const props = defineProps<Props>()
+</script>
+
 <template>
   <section>
     <header>
       <div class="util-menu">
         <h1 class="util-menu__title">
-          마이페이지
+          {{ title }}
         </h1>
         <aside class="util-menu__aside">
           <button>
