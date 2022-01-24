@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     },
   },
   buildModules: [
-    '@vueuse/nuxt',
     '@pinia/nuxt',
   ],
   css: [

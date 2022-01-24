@@ -14,7 +14,6 @@
     "@types/lodash": "^4.14.178",
     "@vue/test-utils": "^2.0.0-rc.18",
     "@vue/vue3-jest": "^27.0.0-alpha.4",
-    "@vueuse/nuxt": "^7.3.0",
     "jest": "^27.4.7",
     "jest-transform-stub": "^2.0.0",
     "nuxt3": "latest",
