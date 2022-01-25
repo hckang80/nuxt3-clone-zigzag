@@ -48,7 +48,7 @@ const saveMyStyles = () => {
         매일 취향에 맞는 상품을 찾아올게요!
       </p>
     </header>
-    <pre>{{ selectedCategory }}</pre>
+
     <ul class="main-categories">
       <li
         v-for="category in allCategories"
@@ -57,7 +57,10 @@ const saveMyStyles = () => {
           { 'is-active': selectedCategory === category }
         ]"
       >
-        <button @click="selectCategory(category)">
+        <button
+          :id="category"
+          @click="selectCategory(category)"
+        >
           {{ category }}
         </button>
       </li>
