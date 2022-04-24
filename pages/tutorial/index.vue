@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { Categories, Product } from '@/types'
 
 const { set } = useObject()
